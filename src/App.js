@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import ReactJson from 'react-json-view'
 
 function App() {
+  const my_json_object = {
+    test: 'asdf'
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ReactJson
+        src={my_json_object}
+        name="test-json-file.json"
+        theme="summerfruit"
+        enableClipboard={false}
+        displayObjectSize={false}
+        displayDataTypes={false}
+        onEdit={(edit) => {console.log('edit', edit)}}
+        onAdd={(add) => {console.log('add', add)}}
+        defaultValue="new property"
+        onDelete={(del) => {console.log('del', del)}}
+        quotesOnKeys={false}
+      />
     </div>
   );
 }
