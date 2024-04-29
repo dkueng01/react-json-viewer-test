@@ -2,8 +2,15 @@ import ReactJson from 'react-json-view'
 
 function App() {
   const my_json_object = {
-    test: 'asdf'
+    name: 'David Küng',
+    age: 22,
+    children: [
+      {name: 'Josef', age: 10},
+      {name: 'Josefine', age: 12}
+    ],
+    isCool: false
   }
+
   return (
     <div>
       <ReactJson
